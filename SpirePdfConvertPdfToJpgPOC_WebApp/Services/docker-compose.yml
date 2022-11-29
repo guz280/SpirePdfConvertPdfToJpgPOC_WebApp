@@ -1,0 +1,16 @@
+﻿version: '3.8'
+services:
+ Services.CustomerDocumentsAPI:
+   container_name: Services.CustomerDocumentsAPI
+   network_mode: bridge
+   ports:
+     - 8081:8080
+   env_file:
+     - ./Services.CustomerDocumentsAPI.env
+   image: nexus-docker.dvo-novibet.systems/accounts/customerdocuments-api:238-alpha
+   labels:
+     novibet: Services.CustomerDocumentsAPI
+     service: customerdocumentsapi
+     department: acc
+     filebeat_enabled: true
+   restart: always

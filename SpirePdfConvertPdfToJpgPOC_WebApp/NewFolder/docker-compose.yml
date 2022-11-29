@@ -1,0 +1,16 @@
+﻿version: '3.8'
+services:
+ Services.CustomerDocumentsAPI:
+   container_name: Services.CustomerDocumentsAPI
+   network_mode: bridge
+   ports:
+     - 8081:8080
+   env_file:
+     - ./Services.CustomerDocumentsAPI.env
+   image: 9eca014fe192ed7e311d55d901fbbc057b4f37c16207299761010986b9ca313a
+   labels:
+     novibet: Services.CustomerDocumentsAPI
+     service: customerdocumentsapi
+     department: acc
+     filebeat_enabled: true
+   restart: always
